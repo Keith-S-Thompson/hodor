@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+
+#
+# Interpreter for the "Hodor" programming language
+#
+
+use strict;
+use warnings;
+use v5.10;
+
+my %translate = (
+    hodor => '"Buzz"',
+    hodoR => '"Fizz"',
+    hodOr => '"FizzBuzz"',
+    hodOR => '%',
+    hoDor => '..',
+    hoDoR => '0',
+    hoDOr => '1',
+    hoDOR => '2',
+    hOdor => '3',
+    hOdoR => '4',
+    hOdOr => '5',
+    hOdOR => '6',
+    hODor => '7',
+    hODoR => '8',
+    hODOr => '9',
+    hODOR => '==',
+    Hodor => 'else',
+    HodoR => 'elsif',
+    HodOr => 'end',
+    HodOR => 'for',
+    HoDor => 'i',
+    HoDoR => 'if',
+    HoDOr => 'in',
+    HoDOR => 'puts'
+);
+
+open my $RUBY, '|-', 'ruby' or die "ruby: $!|n";
+while (<>) {
+    s/#.*$//;
+    foreach my $key (keys %translate) {
+        s/$key/$translate{$key}/g;
+    }
+    print $RUBY $_;
+}
+close $RUBY;
