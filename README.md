@@ -2,6 +2,11 @@ Hodor is a special-purpose language specifically created to support a
 solution of the FizzBuzz problem.  There are probably other programming
 languages called Hodor.  This one is mine.
 
+[Turing-completeness](http://en.wikipedia.org/wiki/Turing_completeness)
+was not a design goal, and I haven't bothered to figure out whether
+the language is Turing-complete or not.  If it isn't, it could probably
+be made so.
+
 References:
 
 * [http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/](Using FizzBuzz to Find Developers who Grok Coding) by Imran Ghory
